@@ -18,20 +18,22 @@ services:
   api:
     build:
       context: ./api
-    container_name: flask-api
+    container_name: node-api
     restart: always
     depends_on:
       - postgres
     environment:
-      FLASK_APP: app.py
+      NODE_ENV: production
     ports:
       - "5000:5000"
+    working_dir: /usr/src/app
+    command: "node app.js"
 
-  frontend:
-    build:
-      context: ./frontend
-    container_name: react-frontend
-    restart: always
-    ports:
-      - "3000:3000"
+  #frontend:
+    #build:
+      #context: ./frontend
+    #container_name: react-frontend
+   # restart: always
+    #ports:
+      #- "3000:3000"
 

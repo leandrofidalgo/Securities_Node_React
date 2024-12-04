@@ -1,10 +1,18 @@
-FROM python:3.9-slim
+# Escolha a imagem base
+FROM node:18
 
-WORKDIR /app
+# Crie e defina o diretório de trabalho
+WORKDIR /usr/src/app
 
-COPY requirements.txt requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Copie o package.json e instale as dependências
+COPY package*.json ./
+RUN npm install
 
+# Copie o restante dos arquivos do projeto
 COPY . .
 
-CMD ["python", "app.py"]
+# Exponha a porta que a aplicação vai rodar
+EXPOSE 5000
+
+# Comando para rodar a aplicação
+CMD ["node", "app.js"]
