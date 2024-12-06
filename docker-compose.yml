@@ -25,7 +25,6 @@ services:
     ports:
       - "5000:5000"
     working_dir: /usr/src/app
-    command: "node app.js"
 
   frontend:
     build:

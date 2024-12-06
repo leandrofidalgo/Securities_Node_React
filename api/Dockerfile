@@ -11,8 +11,10 @@ RUN npm install
 # Copie o restante dos arquivos do projeto
 COPY . .
 
+RUN npm run build
+
 # Exponha a porta que a aplicação vai rodar
 EXPOSE 5000
 
 # Comando para rodar a aplicação
-CMD ["node", "app.js"]
+CMD ["node", "dist/app.js"]
