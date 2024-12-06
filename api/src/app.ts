@@ -78,8 +78,8 @@ async function getSecurityDetail(securityId: number): Promise<SecurityDetail[]> 
       trend: row.trend,
       prices: result.rows.filter((r: any) => r.date).map((r: any) => ({
         date: r.date,
-        close_price: r.close_price,
-        volume: r.volume,
+        close_price: parseFloat(r.close_price),
+        volume: parseInt(r.volume, 10)
       })),
     }));
   } finally {
