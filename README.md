@@ -1,6 +1,6 @@
 # Engine AI | Full Stack Exercise
 
-## ⚠️ When we run the dockers the db one needs sometime to start so check if is already ready to work
+## ⚠️ When we run the dockers the database docker take sometime to start so check if is already ready to work
 
 This project implements a full-stack web application for displaying securities and their historical data over time. It is part of the **Engine AI Full Stack Developer Exercise**. The backend is powered by **Node.js** with **TypeScript** and a **PostgreSQL database**, while the frontend uses **ReactJS**, styled with **Material UI**, and includes data visualizations using **Highcharts**.
 
